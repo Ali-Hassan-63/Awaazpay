@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="dashboard" data-title="db.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <h1 data-i18n="db.welcome"></h1>
+      <p class="muted" data-i18n="db.question"></p>
+
+      <a class="mic-hero" href="voice-assistant.html">
+        <span class="mic-dot"><img class="icon" src="assets/icons/mic-white.svg" alt="" width="36" height="36" aria-hidden="true"></span>
+        <span><span class="t" data-i18n="db.mic"></span><span class="d" data-i18n="db.mic_hint"></span></span>
+      </a>
+
+      <div class="grid grid-2">
+        <a class="action-card" href="pay-bill.html">
+          <span class="badge-ic"><img class="icon" src="assets/icons/bolt.svg" alt="" width="32" height="32" aria-hidden="true"></span>
+          <span><span class="t" data-i18n="card.pay"></span><span class="d" data-i18n="card.pay_d"></span></span>
+        </a>
+        <a class="action-card" href="transfer-money.html">
+          <span class="badge-ic"><img class="icon" src="assets/icons/send.svg" alt="" width="32" height="32" aria-hidden="true"></span>
+          <span><span class="t" data-i18n="card.send"></span><span class="d" data-i18n="card.send_d"></span></span>
+        </a>
+        <a class="action-card" href="balance.html">
+          <span class="badge-ic"><img class="icon" src="assets/icons/wallet.svg" alt="" width="32" height="32" aria-hidden="true"></span>
+          <span><span class="t" data-i18n="card.balance"></span><span class="d" data-i18n="card.balance_d"></span></span>
+        </a>
+        <a class="action-card" href="transactions.html">
+          <span class="badge-ic"><img class="icon" src="assets/icons/list.svg" alt="" width="32" height="32" aria-hidden="true"></span>
+          <span><span class="t" data-i18n="card.history"></span><span class="d" data-i18n="card.history_d"></span></span>
+        </a>
+        <a class="action-card" href="help.html">
+          <span class="badge-ic"><img class="icon" src="assets/icons/help.svg" alt="" width="32" height="32" aria-hidden="true"></span>
+          <span><span class="t" data-i18n="card.help"></span><span class="d" data-i18n="card.help_d"></span></span>
+        </a>
+      </div>
+
+      <section class="card" style="margin-top:1.25rem" aria-labelledby="voice-how">
+        <h2 id="voice-how" data-i18n="db.how_title"></h2>
+        <ol class="steps-list">
+          <li data-i18n="db.how1"></li>
+          <li data-i18n="db.how2"></li>
+          <li data-i18n="db.how3"></li>
+        </ol>
+        <p class="small" style="margin-top:0.9rem" data-i18n="db.how_tip"></p>
+      </section>
+
+      <div class="btn-row">
+        <a class="btn btn-danger" href="index.html"><span data-i18n="db.back"></span></a>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

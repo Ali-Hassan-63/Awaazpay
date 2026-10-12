@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="help" data-title="hp.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <h1 data-i18n="hp.heading"></h1>
+      <div class="grid grid-2">
+        <section class="card" aria-labelledby="can-h">
+          <h2 id="can-h" data-i18n="hp.can_title"></h2>
+          <ul class="check-list yes">
+            <li data-i18n="hp.can1"></li><li data-i18n="hp.can2"></li><li data-i18n="hp.can3"></li><li data-i18n="hp.can4"></li>
+          </ul>
+        </section>
+        <section class="card" aria-labelledby="cannot-h">
+          <h2 id="cannot-h" data-i18n="hp.cannot_title"></h2>
+          <ul class="check-list no">
+            <li data-i18n="hp.cannot1"></li><li data-i18n="hp.cannot2"></li><li data-i18n="hp.cannot3"></li><li data-i18n="hp.cannot4"></li>
+          </ul>
+        </section>
+      </div>
+
+      <section style="margin-top:1.5rem" aria-labelledby="faq-h">
+        <h2 id="faq-h" data-i18n="hp.faq_title"></h2>
+        <div class="faq-list">
+          <details><summary data-i18n="hp.q1"></summary><p data-i18n="hp.a1"></p></details>
+          <details><summary data-i18n="hp.q2"></summary><p data-i18n="hp.a2"></p></details>
+          <details><summary data-i18n="hp.q3"></summary><p data-i18n="hp.a3"></p></details>
+          <details><summary data-i18n="hp.q4"></summary><p data-i18n="hp.a4"></p></details>
+          <details><summary data-i18n="hp.q5"></summary><p data-i18n="hp.a5"></p></details>
+        </div>
+      </section>
+
+      <div class="grid grid-2" style="margin-top:1.5rem">
+        <section class="card" aria-labelledby="recover-h">
+          <h2 id="recover-h" data-i18n="hp.recover_title"></h2>
+          <p data-i18n="hp.recover_body"></p>
+          <div class="btn-row" style="margin-top:0.5rem">
+            <a class="btn btn-primary" href="voice-assistant.html"><img class="icon" src="assets/icons/mic-white.svg" alt="" width="24" height="24" aria-hidden="true"><span data-i18n="hp.recover_voice"></span></a>
+            <a class="btn" href="dashboard.html"><span data-i18n="hp.recover_buttons"></span></a>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="voice-h">
+          <h2 id="voice-h" data-i18n="hp.voice_title"></h2>
+          <button id="runCheck" type="button" class="btn"><span data-i18n="hp.check_btn"></span></button>
+          <table class="support-table" id="checkTable" hidden>
+            <tbody>
+              <tr><th scope="row" data-i18n="hp.check_rec"></th><td id="chkRec"></td></tr>
+              <tr><th scope="row" data-i18n="hp.check_syn"></th><td id="chkSyn"></td></tr>
+              <tr><th scope="row" data-i18n="hp.check_urvoice"></th><td id="chkUr"></td></tr>
+            </tbody>
+          </table>
+          <p class="small" style="margin-top:0.8rem" data-i18n="hp.voice_note"></p>
+        </section>
+      </div>
+
+      <section id="human" class="card" style="margin-top:1.5rem" aria-labelledby="human-h" tabindex="-1">
+        <h2 id="human-h" data-i18n="hp.human_title"></h2>
+        <div class="notice notice-warn"><span class="mark" aria-hidden="true">!</span><span data-i18n="hp.human_body"></span></div>
+        <form id="humanForm" novalidate>
+          <div class="field">
+            <label for="topic" data-i18n="hp.human_topic"></label>
+            <select id="topic" class="input">
+              <option value="" data-i18n="hp.human_choose"></option>
+              <option value="bill" data-i18n="hp.topic_bill"></option>
+              <option value="transfer" data-i18n="hp.topic_transfer"></option>
+              <option value="voice" data-i18n="hp.topic_voice"></option>
+              <option value="other" data-i18n="hp.topic_other"></option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="channel" data-i18n="hp.human_channel"></label>
+            <select id="channel" class="input">
+              <option value="" data-i18n="hp.human_choose"></option>
+              <option value="call" data-i18n="hp.channel_call"></option>
+              <option value="visit" data-i18n="hp.channel_visit"></option>
+              <option value="family" data-i18n="hp.channel_family"></option>
+            </select>
+          </div>
+          <p id="humanError" class="error-msg" role="alert"></p>
+          <button type="submit" class="btn btn-primary"><span data-i18n="hp.human_send"></span></button>
+        </form>
+        <div id="humanDone" class="notice notice-ok" style="margin-top:1rem" hidden tabindex="-1">
+          <span class="mark" aria-hidden="true">✓</span>
+          <span><strong data-i18n="hp.human_done_title"></strong><br><span data-i18n="hp.human_done_body"></span></span>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

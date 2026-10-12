@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="landing" data-title="lp.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title" data-i18n="brand.tagline"></h1>
+        <p class="lead" data-i18n="lp.intro"></p>
+
+        <h2 id="lang-heading" data-i18n="lp.choose"></h2>
+        <div class="lang-choice" role="group" aria-labelledby="lang-heading">
+          <button type="button" class="btn" data-lang-choice="ur" lang="ur">اردو</button>
+          <button type="button" class="btn" data-lang-choice="en" lang="en">English</button>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="voice-assistant.html"><img class="icon" src="assets/icons/mic-white.svg" alt="" width="24" height="24" aria-hidden="true"><span data-i18n="lp.start_voice"></span></a>
+          <a class="btn" href="dashboard.html"><span data-i18n="lp.start_buttons"></span></a>
+        </div>
+      </section>
+
+      <div class="grid grid-2">
+        <section class="card" aria-labelledby="how-title">
+          <h2 id="how-title" data-i18n="lp.how_title"></h2>
+          <ol class="steps-list">
+            <li data-i18n="lp.how1"></li>
+            <li data-i18n="lp.how2"></li>
+            <li data-i18n="lp.how3"></li>
+          </ol>
+        </section>
+        <section class="card notice-warn" aria-labelledby="safety-title" style="background:var(--amber-soft);border-color:#e8c978;color:var(--amber-ink)">
+          <h2 id="safety-title" data-i18n="lp.safety_title" style="color:var(--amber-ink)"></h2>
+          <p data-i18n="lp.safety_body"></p>
+        </section>
+      </div>
+
+      <section class="card" aria-labelledby="a11y-title" style="margin-top:1rem">
+        <h2 id="a11y-title" data-i18n="lp.a11y_title"></h2>
+        <p data-i18n="lp.a11y_body"></p>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

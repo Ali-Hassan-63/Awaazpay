@@ -1,0 +1,49 @@
+flowchart TD
+    START([Open assistant: welcome + 5 choices]) --> IN[/"User speaks, types or taps a button"/]
+    IN --> SPEECH{Voice input OK?}
+    SPEECH -- "Permission denied / no speech / unsupported / error" --> F["Case F: explain in plain words<br/>offer Retry · Type instead · Use buttons"]
+    F --> IN
+    SPEECH -- "Yes, or typed / tapped" --> GLOBAL{Global command?}
+
+    GLOBAL -- "Cancel" --> CANCEL["Case G: clear draft and pending action<br/>'Nothing was sent, no money taken'"] --> START
+    GLOBAL -- "Start again" --> RESTART["Clear chat and task"] --> START
+    GLOBAL -- "Exit" --> EXIT(["Goodbye + link to main page"])
+    GLOBAL -- "Go back" --> BACK["Restore previous step, re-ask it"] --> IN
+    GLOBAL -- "Human / agent" --> HUMAN(["Help page: simulated human-help request"])
+    GLOBAL -- "None" --> INSTEP{Task in progress?}
+
+    INSTEP -- "Yes" --> FITS{Input fits the current step?}
+    FITS -- "Yes" --> STEPOK["Accept value, reset failure count"]
+    FITS -- "No: balance / history / help" --> SIDE["Answer it, then remind: earlier task still waiting"] --> IN
+    FITS -- "No: new bill or transfer request" --> SWITCH["Replace task with the new one"] --> INTENT
+    FITS -- "No: anything else" --> MISS["Case D/H: re-ask the same step<br/>(2nd failure: guided choices + help page + restart)"] --> IN
+    INSTEP -- "No" --> INTENT{"Keyword-scored intent"}
+
+    INTENT -- "balance" --> BAL["Show demo balance"] --> START
+    INTENT -- "history" --> HIS["Show 3 latest + link to full list"] --> START
+    INTENT -- "help" --> HELP["Explain abilities + help page link"] --> START
+    INTENT -- "greeting / thanks" --> START
+    INTENT -- "off-topic" --> OFF["Case C: polite refusal + main page link"] --> START
+    INTENT -- "no match" --> UNREC["Case A: three quick buttons<br/>(2nd miss: guided choices)"] --> IN
+
+    INTENT -- "pay_bill" --> CAT{Bill type known?}
+    CAT -- "No (ambiguous 'I need to pay')" --> AMB["Case B: ask electricity / gas / water / internet"] --> IN
+    CAT -- "Yes" --> REF["Ask for 8-digit reference or use demo number"]
+    REF --> REFV{Valid reference for this bill?}
+    REFV -- "No" --> REFE["Case E: say what is wrong + offer demo number"] --> IN
+    REFV -- "Yes" --> BAMT["Show bill; ask pay full amount?"]
+    BAMT --> AMTV{Valid amount?}
+    AMTV -- "No (0, negative, decimal, > balance, > limit)" --> AMTE["Case E: actionable correction"] --> IN
+    AMTV -- "Yes" --> REVIEW
+
+    INTENT -- "transfer_money" --> TR{Recipient and amount given?}
+    TR -- "Recipient missing" --> TRR["Case D: keep amount, ask who"] --> IN
+    TR -- "Amount missing" --> TRA["Ask how much (quick amounts)"] --> AMTV
+    TR -- "Both" --> AMTV
+
+    REVIEW["Show summary card; store PENDING action<br/>nothing executed yet"] --> OPEN["Button: open confirmation page"]
+    REVIEW --> CHANGE["Change amount / Cancel"] --> IN
+    OPEN --> CONF["Confirmation page: details + balance after<br/>assistant never presses the final button"]
+    CONF -- "Cancel" --> CANC2(["Cancelled state: nothing recorded"])
+    CONF -- "Change details" --> IN
+    CONF -- "User presses Confirm (demo)" --> DONE(["Fictional DEMO receipt + reference number<br/>balance and history updated"])

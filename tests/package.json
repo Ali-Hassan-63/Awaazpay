@@ -1,0 +1,7 @@
+{
+  "name": "awaazpay-dev-checks",
+  "private": true,
+  "description": "Optional developer checks (not part of the prototype). Run: npm install && npm test",
+  "scripts": { "test": "node engine.test.js && node pages.test.js" },
+  "devDependencies": { "jsdom": "^26.0.0" }
+}

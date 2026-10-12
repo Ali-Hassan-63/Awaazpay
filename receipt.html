@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="receipt" data-title="rc.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="narrow">
+      <section id="receiptBox" hidden>
+        <div class="receipt" id="receiptCard">
+          <div class="watermark" aria-hidden="true">DEMO</div>
+          <span class="demo-stamp" data-i18n="rc.badge"></span>
+          <div class="ok-head">
+            <span class="ok-mark" aria-hidden="true">✓</span>
+            <div>
+              <h1 style="margin:0" data-i18n="rc.heading"></h1>
+              <p style="margin:0" class="muted" data-i18n="rc.success"></p>
+            </div>
+          </div>
+          <dl id="receiptList" class="summary"></dl>
+          <p class="small" style="margin-top:0.9rem" data-i18n="rc.note"></p>
+        </div>
+        <div class="btn-row no-print">
+          <a class="btn btn-primary" href="dashboard.html"><span data-i18n="common.dashboard"></span></a>
+          <a class="btn" href="transactions.html"><span data-i18n="rc.history"></span></a>
+          <button id="printBtn" type="button" class="btn"><span data-i18n="rc.print"></span></button>
+        </div>
+      </section>
+      <section id="receiptEmpty" class="card center" hidden>
+        <h1 data-i18n="rc.heading"></h1>
+        <p data-i18n="rc.empty"></p>
+        <div class="btn-row"><a class="btn btn-primary" href="dashboard.html"><span data-i18n="common.dashboard"></span></a></div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/payments.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

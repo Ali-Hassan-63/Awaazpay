@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="pay-bill" data-title="pb.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="narrow">
+      <h1 data-i18n="pb.heading"></h1>
+      <p id="stepCount" class="small" aria-live="polite"></p>
+      <ol class="stepper" id="stepper">
+        <li data-i18n="pb.s1"></li><li data-i18n="pb.s2"></li><li data-i18n="pb.s3"></li>
+      </ol>
+
+      <section id="step1" class="card" aria-labelledby="s1h">
+        <h2 id="s1h" data-i18n="pb.s1_q"></h2>
+        <div id="categoryGrid" class="choice-grid"></div>
+        <p id="catError" class="error-msg" role="alert"></p>
+        <div class="btn-row">
+          <a class="btn btn-danger" href="dashboard.html" data-cancel><span data-i18n="common.cancel"></span></a>
+          <button id="step1Next" type="button" class="btn btn-primary"><span data-i18n="common.continue"></span></button>
+        </div>
+      </section>
+
+      <section id="step2" class="card" aria-labelledby="s2h" hidden>
+        <h2 id="s2h" data-i18n="pb.s2"></h2>
+        <p data-i18n="pb.s2_help"></p>
+        <div class="field">
+          <label for="refInput" id="refLabel"></label>
+          <input id="refInput" class="input num-input" type="text" inputmode="numeric" autocomplete="off" aria-describedby="refHint refError">
+          <p id="refHint" class="hint"></p>
+          <p id="refError" class="error-msg" role="alert"></p>
+        </div>
+        <div class="chips"><button id="useDemo" type="button" class="chip"></button></div>
+        <div id="billFound" class="notice notice-ok" style="margin-top:1rem" hidden></div>
+        <div class="btn-row">
+          <button id="step2Back" type="button" class="btn"><span data-i18n="common.back"></span></button>
+          <a class="btn btn-danger" href="dashboard.html" data-cancel><span data-i18n="common.cancel"></span></a>
+          <button id="findBill" type="button" class="btn btn-primary"><span data-i18n="pb.find"></span></button>
+          <button id="step2Next" type="button" class="btn btn-primary" hidden><span data-i18n="common.continue"></span></button>
+        </div>
+      </section>
+
+      <section id="step3" class="card" aria-labelledby="s3h" hidden>
+        <h2 id="s3h" data-i18n="pb.s3_q"></h2>
+        <div class="choice-grid" role="group" aria-labelledby="s3h">
+          <button id="payFull" type="button" class="choice" aria-pressed="true"><span><span class="t" id="payFullText"></span></span><span class="tick" aria-hidden="true">✓</span></button>
+          <button id="payOther" type="button" class="choice" aria-pressed="false"><span><span class="t" data-i18n="pb.pay_other"></span></span><span class="tick" aria-hidden="true">✓</span></button>
+        </div>
+        <div id="otherWrap" class="field" hidden>
+          <label for="amountInput" data-i18n="pb.other_label"></label>
+          <input id="amountInput" class="input num-input" type="text" inputmode="numeric" autocomplete="off" aria-describedby="amountError">
+        </div>
+        <p id="amountError" class="error-msg" role="alert"></p>
+        <div class="btn-row">
+          <button id="step3Back" type="button" class="btn"><span data-i18n="common.back"></span></button>
+          <a class="btn btn-danger" href="dashboard.html" data-cancel><span data-i18n="common.cancel"></span></a>
+          <button id="step3Next" type="button" class="btn btn-primary"><span data-i18n="pb.review"></span></button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/payments.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="confirmation" data-title="cf.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="narrow">
+      <section id="stateReview" hidden>
+        <h1 data-i18n="cf.heading"></h1>
+        <p data-i18n="cf.lead"></p>
+        <div class="card confirm-card">
+          <dl id="summary" class="summary"></dl>
+        </div>
+        <div class="notice notice-warn" style="margin-top:1rem"><span class="mark" aria-hidden="true">!</span><span data-i18n="cf.demo_note"></span></div>
+        <p class="small" style="margin-top:0.8rem" data-i18n="cf.manual_note"></p>
+        <div class="btn-row">
+          <button id="confirmBtn" type="button" class="btn btn-confirm"><img class="icon" src="assets/icons/check-white.svg" alt="" width="24" height="24" aria-hidden="true"><span data-i18n="cf.confirm"></span></button>
+        </div>
+        <div class="btn-row" style="margin-top:0.75rem">
+          <a id="changeBtn" class="btn" href="dashboard.html"><span data-i18n="cf.change"></span></a>
+          <button id="cancelBtn" type="button" class="btn btn-danger"><img class="icon" src="assets/icons/x.svg" alt="" width="24" height="24" aria-hidden="true"><span data-i18n="cf.cancel"></span></button>
+        </div>
+        <p id="confirmError" class="error-msg" role="alert"></p>
+      </section>
+
+      <section id="stateCancelled" class="card center" hidden>
+        <div class="result-icon neutral" aria-hidden="true">✕</div>
+        <h1 data-i18n="cf.cancelled_title"></h1>
+        <p data-i18n="cf.cancelled_body"></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="dashboard.html"><span data-i18n="common.dashboard"></span></a>
+          <a class="btn" href="voice-assistant.html"><span data-i18n="cf.start_again"></span></a>
+        </div>
+      </section>
+
+      <section id="stateEmpty" class="card center" hidden>
+        <h1 data-i18n="cf.empty_title"></h1>
+        <p data-i18n="cf.empty_body"></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="dashboard.html"><span data-i18n="common.dashboard"></span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/payments.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

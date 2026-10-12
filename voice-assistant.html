@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AwaazPay — educational HCI prototype. Demo only: no real money is transferred.">
+  <title>AwaazPay</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="voice-assistant" data-title="va.title">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+  <div id="demo-banner"></div>
+  <header id="site-header"></header>
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <h1 data-i18n="va.heading"></h1>
+
+      <div id="voiceNotice" class="notice notice-warn" role="status" hidden style="margin-bottom:1rem"><span class="mark" aria-hidden="true">!</span><span id="voiceNoticeText"></span></div>
+
+      <div class="assistant-layout">
+        <section aria-labelledby="chat-h">
+          <h2 id="chat-h" class="sr-only" data-i18n="va.chat_label"></h2>
+          <div id="statusBar" class="status-bar" data-state="idle" role="status" aria-live="polite">
+            <span class="dot" aria-hidden="true"></span><span id="statusText"></span>
+          </div>
+          <div id="chat" class="chat" role="log" aria-live="polite" data-i18n-attr="aria-label:va.chat_label" tabindex="0"></div>
+          <div id="liveTranscript" class="live-transcript" aria-live="off"></div>
+          <div id="quick" class="quick" role="group" data-i18n-attr="aria-label:va.quick_label"></div>
+
+          <form id="textForm" class="text-form" autocomplete="off">
+            <div style="flex:1">
+              <label for="textInput" data-i18n="va.type_label"></label>
+              <input id="textInput" class="input" type="text" data-i18n-attr="placeholder:va.type_ph" autocomplete="off" enterkeyhint="send">
+            </div>
+            <button id="sendBtn" type="submit" class="btn btn-primary" style="align-self:flex-end"><span data-i18n="va.send"></span></button>
+          </form>
+        </section>
+
+        <aside class="stack" aria-labelledby="ctl-h">
+          <section class="card voice-panel">
+            <h2 id="ctl-h" class="sr-only" data-i18n="va.controls"></h2>
+            <button id="micBtn" type="button" class="mic-btn" aria-pressed="false"><img class="icon" src="assets/icons/mic-white.svg" alt="" width="58" height="58" aria-hidden="true"></button>
+            <span id="micLabel" class="mic-label"></span>
+            <div class="voice-actions">
+              <button id="stopBtn" type="button" class="btn" disabled><span data-i18n="va.mic.stop"></span></button>
+              <button id="repeatBtn" type="button" class="btn"><span data-i18n="va.repeat"></span></button>
+            </div>
+            <div class="toggle">
+              <input id="voiceToggle" type="checkbox" checked>
+              <label for="voiceToggle" data-i18n="va.voice_replies"></label>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="btn-row" style="margin-top:0">
+              <button id="undoBtn" type="button" class="btn"><span data-i18n="va.undo"></span></button>
+              <button id="cancelBtn" type="button" class="btn btn-danger"><span data-i18n="va.cancel"></span></button>
+              <button id="restartBtn" type="button" class="btn"><span data-i18n="va.restart"></span></button>
+              <a id="exitBtn" class="btn" href="dashboard.html"><span data-i18n="va.exit"></span></a>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2 data-i18n="va.try_title"></h2>
+            <ul class="small" style="padding-inline-start:1.2rem;margin:0">
+              <li data-i18n="va.try1"></li><li data-i18n="va.try2"></li><li data-i18n="va.try3"></li>
+            </ul>
+          </section>
+
+          <details>
+            <summary data-i18n="va.privacy_title"></summary>
+            <p class="small" data-i18n="va.privacy_body"></p>
+          </details>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <noscript><p class="notice notice-error" style="margin:1rem">JavaScript is required / اس صفحے کے لیے JavaScript ضروری ہے۔</p></noscript>
+  <script src="js/demo-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/payments.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/assistant-ui.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>
