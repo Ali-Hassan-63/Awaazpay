@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AwaazPay — آواز سے ادائیگی
 
 **A voice-first, Urdu-friendly bill-payment and money-transfer assistant — an educational HCI prototype.**
@@ -77,3 +78,7 @@ Semantic landmarks and skip link; labelled controls; visible focus; built from n
 ## Known limitations
 
 Keyword-based understanding (unusual phrasing will fail); simple number-word parsing; no real authentication, banking or post-confirmation reversal (by design); `localStorage` only; layouts not yet checked on physical devices; Urdu wording should be reviewed by a native speaker.
+=======
+# Awaazpay
+voice based electricity
+>>>>>>> 4b159f07879242d26add375be925a554e2cfba53
