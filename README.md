@@ -75,10 +75,6 @@ awaazpay/
 
 Semantic landmarks and skip link; labelled controls; visible focus; built from native controls so it should be keyboard-operable (not yet verified with a keyboard-only run); targets ≥ 48 px; status shown by text + shape + colour; live regions for status and chat; `dir="rtl"` for Urdu with amounts/reference numbers isolated left-to-right; reduced-motion support; responsive layouts; print stylesheet for the receipt. Text contrast ratios (computed) are at least 5.1:1.
 
-## Known limitations
-
-Keyword-based understanding (unusual phrasing will fail); simple number-word parsing; no real authentication, banking or post-confirmation reversal (by design); `localStorage` only; layouts not yet checked on physical devices; Urdu wording should be reviewed by a native speaker.
-=======
 # Awaazpay
 voice based electricity
 >>>>>>> 4b159f07879242d26add375be925a554e2cfba53
